@@ -26,4 +26,7 @@ ffmpeg-python
 redis==4.5.5
 gitpython
 gtts
+python-telegram-bot==13.15
+python-arq==6.0.5
+redis==3.5.3
 pytz
