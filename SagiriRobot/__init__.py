@@ -5,7 +5,7 @@ import time
 
 import telegram.ext as tg
 from aiohttp import ClientSession
-from Python_ARQ import ARQ
+from arq import arq
 from redis import StrictRedis
 from pyrogram import Client, errors
 from telethon import TelegramClient
@@ -57,8 +57,8 @@ if ENV:
     TOKEN = os.environ.get("TOKEN", None)
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
     WORKERS = int(os.environ.get("WORKERS", 8))
-    ARQ_API_URL = os.environ.get("ARQ_API_URL", "http://thearq.tech?")
-    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", "FZPYYN-EKAYFX-RNPLEJ-DRVAPH-ARQ")    
+    arq_API_URL = os.environ.get("arq_API_URL", "http://thearq.tech?")
+    arq_API_KEY = os.environ.get("arq_API_KEY", "FZPYYN-EKAYFX-RNPLEJ-DRVAPH-arq")    
  
     try:
         OWNER_ID = int(os.environ.get("OWNER_ID", None))
@@ -115,8 +115,8 @@ else:
     TOKEN = Config.TOKEN
     TIME_API_KEY = Config.TIME_API_KEY
     WORKERS = Config.WORKERS
-    ARQ_API_KEY = Config.ARQ_API_KEY
-    ARQ_API_URL = Config.ARQ_API_URL 
+    arq_API_KEY = Config.arq_API_KEY
+    arq_API_URL = Config.arq_API_URL 
 
     try:
         OWNER_ID = int(Config.OWNER_ID)
@@ -191,9 +191,9 @@ BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
 BOT_USERNAME = dispatcher.bot.username
 
-# ARQ Client
-print("[INFO]: INITIALIZING ARQ CLIENT...")
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+# arq Client
+print("[INFO]: INITIALIZING arq CLIENT...")
+arq = arq(arq_API_URL, arq_API_KEY, aiohttpsession)
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
