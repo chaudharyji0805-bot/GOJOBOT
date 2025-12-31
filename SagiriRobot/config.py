@@ -13,7 +13,7 @@ class Config(object):
 
     MONGO_DB_URI = "mongodb+srv://adi6804:Adi.855053@dazai.zj0usfh.mongodb.net/?retryWrites=true&w=majority"  # Get this value from cloud.mongodb.com
 
-    REDIS_URL = "redis://default:kMaLb8lDTzdf3MVW4gXmkcSaToV4hYci@redis-19240.c301.ap-south-1-1.ec2.cloud.redislabs.com:19240"  #Get this value from redis.com
+    REDIS_URL = "redis://default:Ic73cT8BUCePyawkEw3TgVTMQId6ZDeU@redis-17754.c74.us-east-1-4.ec2.cloud.redislabs.com:17754"  #Get this value from redis.com
 
     # Telegraph link of the image which will be shown at start command.
     START_IMG = "https://te.legra.ph/file/31077a464a4ca165eb8bc.jpg"
