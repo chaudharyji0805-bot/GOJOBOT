@@ -11,44 +11,89 @@
   ],
   "repository": "https://github.com/chaudharyji0805-bot/GOJOBOT",
   "stack": "heroku-22",
-
   "addons": [
     "heroku-postgresql:essential-0"
   ],
-
   "env": {
     "API_ID": {
       "description": "Get this value from my.telegram.org/apps.",
-      "required": true
+      "required": true,
+      "value": ""
     },
     "API_HASH": {
       "description": "Get this value from my.telegram.org/apps.",
-      "required": true
+      "required": true,
+      "value": ""
     },
     "ALLOW_EXCL": {
       "description": "Set this to True if you want ! to be a command prefix along with /.",
+      "required": false,
       "value": "True"
     },
     "CASH_API_KEY": {
       "description": "Get from alphavantage.co",
-      "required": true
+      "required": true,
+      "value": ""
     },
     "DEL_CMDS": {
       "description": "Delete command messages from unauthorized users.",
+      "required": false,
       "value": "True"
     },
     "SQLALCHEMY_DATABASE_URI": {
-      "description": "Leave EMPTY. Heroku will inject DATABASE_URL automatically.",
-      "required": false
+      "description": "Leave empty. Heroku injects DATABASE_URL automatically.",
+      "required": false,
+      "value": ""
     },
     "ENV": {
+      "description": "Enable environment variables",
       "required": true,
       "value": "True"
     },
     "EVENT_LOGS": {
-      "required": true
+      "description": "Event logs channel ID",
+      "required": true,
+      "value": ""
     },
     "MONGO_DB_URI": {
-      "required": true
+      "description": "MongoDB connection string",
+      "required": true,
+      "value": ""
     },
-    "
+    "OWNER_ID": {
+      "description": "Your Telegram user ID",
+      "required": true,
+      "value": "6171176459"
+    },
+    "REDIS_URL": {
+      "description": "Redis database URL",
+      "required": true,
+      "value": ""
+    },
+    "START_IMG": {
+      "description": "Telegraph image link",
+      "required": true,
+      "value": ""
+    },
+    "PM_START_IMG": {
+      "description": "Telegraph image link",
+      "required": true,
+      "value": ""
+    },
+    "SUPPORT_CHAT": {
+      "description": "Telegram support group username",
+      "required": true,
+      "value": "The_Apexx"
+    },
+    "TIME_API_KEY": {
+      "description": "Get from timezonedb.com",
+      "required": true,
+      "value": ""
+    },
+    "TOKEN": {
+      "description": "Bot token from @BotFather",
+      "required": true,
+      "value": ""
+    }
+  }
+}
