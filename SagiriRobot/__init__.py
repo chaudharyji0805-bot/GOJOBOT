@@ -1,6 +1,7 @@
 import logging
 import os
 import sys
+import asyncio
 import time
 
 import telegram.ext as tg
@@ -9,6 +10,7 @@ from Python_ARQ import ARQ
 from redis import StrictRedis
 from pyrogram import Client
 from telethon import TelegramClient
+from aiohttp import ClientSession
 
 StartTime = time.time()
 
@@ -119,14 +121,16 @@ dispatcher = updater.dispatcher
 telethn = TelegramClient("Sagiri", API_ID, API_HASH)
 pbot = Client("SagiriRobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
-aiohttpsession = ClientSession()
+aiohttpsession = None
 
 BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
 BOT_USERNAME = dispatcher.bot.username
 
 # ================= ARQ CLIENT ================= #
-
+loop = asyncio.get_event_loop()
+aiohttpsession = loop.run_until_complete(ClientSession().__aenter__())
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession) if ARQ_API_KEY else None
 if not ARQ_API_KEY:
     LOGGER.warning("ARQ API key not set, ARQ features disabled")
     arq = None
