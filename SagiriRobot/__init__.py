@@ -80,8 +80,8 @@ if ENV:
     WOLVES = set(map(int, os.environ.get("WOLVES", "").split()))
 
     # ARQ
-  ARQ_API_URL = os.environ.get("ARQ_API_URL", "https://arq.hamker.dev") 
-  ARQ_API_KEY = os.environ.get("ARQ_API_KEY")
+    ARQ_API_URL = os.environ.get("ARQ_API_URL", "https://arq.hamker.dev")
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY")
 
 else:
     raise RuntimeError("ENV must be enabled on Heroku")
