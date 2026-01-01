@@ -27,5 +27,5 @@ gitpython
 gtts
 python-telegram-bot==13.15
 redis==4.5.5
-python-arq==6.0.5
+arq==0.26.3
 pytz
