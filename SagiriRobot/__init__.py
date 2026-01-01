@@ -5,7 +5,8 @@ import time
 
 import telegram.ext as tg
 from aiohttp import ClientSession
-from arq import Arq
+-from arq import Arq
++from Python_ARQ import ARQ
 from redis import StrictRedis
 from pyrogram import Client
 from telethon import TelegramClient
@@ -80,8 +81,8 @@ if ENV:
     WOLVES = set(map(int, os.environ.get("WOLVES", "").split()))
 
     # ARQ
-    ARQ_API_URL = os.environ.get("ARQ_API_URL", "https://arq.hamker.dev")
-    ARQ_API_KEY = os.environ.get("ARQ_API_KEY")
+   -    arq = Arq(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+   +    arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 else:
     raise RuntimeError("ENV must be enabled on Heroku")
